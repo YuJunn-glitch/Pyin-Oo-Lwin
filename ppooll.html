@@ -1,0 +1,1003 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pyin Oo Lwin | Myanmar's Colonial Hill Station</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #1abc9c;
+      --secondary: #3498db;
+      --dark: #1c2833;
+      --light: #f8f9fa;
+      --text: #333;
+    }
+    
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: var(--text);
+      background-color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                  url('https://i.pinimg.com/1200x/82/4d/aa/824daac9e356166033b5802b8abd1e23.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100px;
+      background: linear-gradient(transparent, #f5f5f5);
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+    }
+
+    h1 {
+      font-size: 4.5rem;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    .subtitle {
+      font-size: 1.5rem;
+      margin-top: 20px;
+      opacity: 0.9;
+      font-weight: 300;
+      max-width: 800px;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 2rem;
+      animation: bounce 2s infinite;
+      cursor: pointer;
+      z-index: 10;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0) translateX(-50%); }
+      40% { transform: translateY(-20px) translateX(-50%); }
+      60% { transform: translateY(-10px) translateX(-50%); }
+    }
+
+    nav {
+      background-color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav a {
+      color: var(--dark);
+      text-decoration: none;
+      margin: 0 20px;
+      font-weight: 600;
+      transition: all 0.3s;
+      padding: 10px 15px;
+      border-radius: 30px;
+      font-size: 1.1rem;
+    }
+
+    nav a:hover, nav a.active {
+      color: white;
+      background-color: var(--primary);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .section {
+      margin: 80px 0;
+      padding: 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-header h2 {
+      font-size: 2.5rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background-color: var(--primary);
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin: 20px auto 0;
+      color: #666;
+      font-size: 1.1rem;
+    }
+
+    /* Overview Section */
+    .overview-content {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .overview-text {
+      flex: 1;
+    }
+
+    .overview-image {
+      flex: 1;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    }
+
+    .overview-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .overview-image:hover img {
+      transform: scale(1.05);
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 40px;
+      text-align: center;
+    }
+
+    .stat-item {
+      padding: 20px;
+    }
+
+    .stat-item i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 15px;
+    }
+
+    .stat-item h3 {
+      margin: 10px 0;
+      color: var(--dark);
+    }
+
+    .stat-item p {
+      color: #666;
+      margin: 0;
+    }
+
+    /* Attractions Section */
+    .attractions-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 30px;
+    }
+
+    .attraction-card {
+      background: white;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .attraction-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    }
+
+    .attraction-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .attraction-content {
+      padding: 25px;
+    }
+
+    .attraction-content h3 {
+      margin-top: 0;
+      color: var(--dark);
+      font-size: 1.5rem;
+    }
+
+    .attraction-content p {
+      color: #666;
+      margin-bottom: 0;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 200px);
+      gap: 15px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-overlay i {
+      color: white;
+      font-size: 2rem;
+    }
+
+    /* Travel Info Section */
+    .travel-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .travel-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+
+    .travel-card h3 {
+      color: var(--dark);
+      margin-top: 0;
+      display: flex;
+      align-items: center;
+    }
+
+    .travel-card h3 i {
+      margin-right: 15px;
+      color: var(--primary);
+    }
+
+    .travel-card ul {
+      padding-left: 20px;
+    }
+
+    .travel-card li {
+      margin-bottom: 10px;
+      color: #666;
+    }
+
+    .travel-card li strong {
+      color: var(--dark);
+    }
+
+    /* Weather Widget */
+    .weather-widget {
+      background: linear-gradient(135deg, #1abc9c, #3498db);
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .weather-widget h3 {
+      margin-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .weather-info {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .temperature {
+      font-size: 3rem;
+      font-weight: 300;
+    }
+
+    .weather-details p {
+      margin: 5px 0;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      background-color: var(--dark);
+      color: white;
+      padding: 80px 0;
+      margin: 80px 0;
+    }
+
+    .testimonial-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .testimonial {
+      background: rgba(255,255,255,0.1);
+      padding: 30px;
+      border-radius: 15px;
+      margin: 20px;
+      position: relative;
+    }
+
+    .testimonial::before {
+      content: '"';
+      font-size: 5rem;
+      position: absolute;
+      top: 10px;
+      left: 20px;
+      opacity: 0.2;
+      font-family: serif;
+    }
+
+    .testimonial-content {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+    }
+
+    .author-avatar {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 15px;
+    }
+
+    .author-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-info h4 {
+      margin: 0;
+      color: var(--primary);
+    }
+
+    .author-info p {
+      margin: 5px 0 0;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      background: linear-gradient(135deg, #203a43, #2c5364);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+      border-radius: 15px;
+      margin: 80px 0;
+    }
+
+    .newsletter h2 {
+      margin-top: 0;
+      color: white;
+    }
+
+    .newsletter p {
+      max-width: 600px;
+      margin: 20px auto 30px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 15px;
+      border: none;
+      border-radius: 30px 0 0 30px;
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      padding: 0 30px;
+      border-radius: 0 30px 30px 0;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s;
+    }
+
+    .newsletter-form button:hover {
+      background-color: #16a085;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 60px 0 20px;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .footer-column h3 {
+      color: var(--primary);
+      margin-top: 0;
+      font-size: 1.3rem;
+    }
+
+    .footer-column ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .footer-column li {
+      margin-bottom: 10px;
+    }
+
+    .footer-column a {
+      color: #ddd;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-column a:hover {
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 20px;
+    }
+
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      color: white;
+      transition: all 0.3s;
+    }
+
+    .social-links a:hover {
+      background: var(--primary);
+      transform: translateY(-3px);
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+
+    /* Floating Button */
+    .floating-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--primary);
+      color: white;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      text-decoration: none;
+      font-size: 1.5rem;
+      z-index: 99;
+      transition: all 0.3s;
+    }
+
+    .floating-btn:hover {
+      background: #16a085;
+      transform: scale(1.1);
+    }
+
+    /* Responsive Design */
+    @media (max-width: 992px) {
+      h1 {
+        font-size: 3.5rem;
+      }
+      
+      .overview-content {
+        flex-direction: column;
+      }
+      
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 200px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      .subtitle {
+        font-size: 1.2rem;
+      }
+      
+      nav a {
+        margin: 0 10px;
+        font-size: 1rem;
+      }
+      
+      .stats {
+        flex-direction: column;
+      }
+      
+      .attractions-container {
+        grid-template-columns: 1fr;
+      }
+      
+      .newsletter-form {
+        flex-direction: column;
+      }
+      
+      .newsletter-form input {
+        border-radius: 30px;
+        margin-bottom: 10px;
+      }
+      
+      .newsletter-form button {
+        border-radius: 30px;
+        padding: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header id="top">
+    <h1>Pyin Oo Lwin</h1>
+    <p class="subtitle">Myanmar's Colonial Hill Station Escape</p>
+    <div class="scroll-down" onclick="document.querySelector('#overview').scrollIntoView({ behavior: 'smooth' })">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </header>
+
+  <nav>
+    <div class="container">
+      <a href="#overview" class="active">Overview</a>
+      <a href="#attractions">Attractions</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#travel">Travel Info</a>
+      <a href="#testimonials">Testimonials</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <section id="overview" class="section">
+      <div class="section-header">
+        <h2>Discover Pyin Oo Lwin</h2>
+        <p>Once a British retreat, this picturesque hill station offers a refreshing escape from Myanmar's tropical heat</p>
+      </div>
+      
+      <div class="overview-content">
+        <div class="overview-text">
+          <p>
+            <strong>Pyin Oo Lwin</strong> (formerly Maymyo) is a picturesque hill station in Myanmar's Mandalay Region, known for its cool climate, colonial architecture, and lush gardens. Nestled in the Shan Highlands, it's a refreshing escape where British colonial charm meets the natural beauty of Myanmar.
+          </p>
+          <p>
+            With its vibrant flower gardens, strawberry farms, scenic waterfalls, and cool mountain air, this peaceful town has become a beloved retreat. Wander through pine forests, admire colonial mansions, ride a horse-drawn carriage, and sip fresh coffee in a garden café.
+          </p>
+        </div>
+        <div class="overview-image">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.YOO_oEiMkM3e3gN2LjpTfgHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Pyin Oo Lwin landscape">
+        </div>
+      </div>
+      
+      <div class="stats">
+        <div class="stat-item">
+          <i class="fas fa-mountain"></i>
+          <h3>1,070m</h3>
+          <p>Altitude</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-road"></i>
+          <h3>67km</h3>
+          <p>From Mandalay</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-calendar-alt"></i>
+          <h3>Nov-Feb</h3>
+          <p>Best Season</p>
+        </div>
+        <div class="stat-item">
+          <i class="fas fa-temperature-low"></i>
+          <h3>18-24°C</h3>
+          <p>Average Temp</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="attractions" class="section">
+      <div class="section-header">
+        <h2>Top Attractions</h2>
+        <p>Explore the must-see sights and experiences in Pyin Oo Lwin</p>
+      </div>
+      
+      <div class="attractions-container">
+        <div class="attraction-card">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.pxKgatZzy4LfTEfm6yX8wgHaE8?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Kandawgyi Gardens">
+          <div class="attraction-content">
+            <h3>National Kandawgyi Gardens</h3>
+            <p>A stunning botanical garden with exotic plants, a butterfly museum, and serene lakes. Perfect for nature lovers and photographers.</p>
+          </div>
+        </div>
+        
+        <div class="attraction-card">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.FX4UO-T4lO7UBjtf3OBQHgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Purcell Tower">
+          <div class="attraction-content">
+            <h3>Purcell Tower</h3>
+            <p>A British-era landmark resembling Big Ben, gifted by Queen Victoria. The clock tower is a symbol of Pyin Oo Lwin's colonial heritage.</p>
+          </div>
+        </div>
+        
+        <div class="attraction-card">
+          <img src="https://th.bing.com/th/id/R.590e6d290cfd8e4d33a4f622f7fd51cf?rik=P87PpTlnUclD9A&pid=ImgRaw&r=0" alt="Pwe Kauk Waterfall">
+          <div class="attraction-content">
+            <h3>Pwe Kauk Waterfalls</h3>
+            <p>A scenic waterfall surrounded by pine forests, perfect for picnics and nature walks. The cool mist provides relief from the tropical heat.</p>
+          </div>
+        </div>
+        
+        <div class="attraction-card">
+          <img src="https://th.bing.com/th/id/R.1ee7763f3fbd75b991f6bbc2b2b1b3aa?rik=X0NJ8oTbJKn7jw&pid=ImgRaw&r=0" alt="Peik Chin Myaung Cave">
+          <div class="attraction-content">
+            <h3>Peik Chin Myaung Cave</h3>
+            <p>A mystical limestone cave filled with Buddhist shrines and natural formations. The cave extends about 150 meters with stunning stalactites.</p>
+          </div>
+        </div>
+        
+        <div class="attraction-card">
+          <img src="https://tripjive.com/wp-content/uploads/2024/11/Pyin-Oo-Lwin-colonial-buildings.jpg" alt="Colonial House">
+          <div class="attraction-content">
+            <h3>Colonial Architecture</h3>
+            <p>Well-preserved British-era buildings, including churches and cottages. Take a walking tour to admire the unique architectural heritage.</p>
+          </div>
+        </div>
+        
+        <div class="attraction-card">
+          <img src="https://image.shutterstock.com/image-photo/pyin-oo-lwin-myanmar-june-260nw-1192490707.jpg" alt="Street Market">
+          <div class="attraction-content">
+            <h3>Local Markets</h3>
+            <p>Vibrant markets offering fresh produce, flowers, and local crafts. Don't miss the famous coffee and strawberry products.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="gallery" class="section">
+      <div class="section-header">
+        <h2>Gallery</h2>
+        <p>A visual journey through Pyin Oo Lwin's beauty</p>
+      </div>
+      
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://tse2.mm.bing.net/th/id/OIP.YOO_oEiMkM3e3gN2LjpTfgHaEJ?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Strawberry Farm">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://image.shutterstock.com/image-photo/pyin-oo-lwin-myanmar-june-260nw-1192490707.jpg" alt="Street Scene">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://th.bing.com/th/id/R.771fcb30b19019f3e33fd46959199cf4?rik=7YzrGs%2f%2bcvlLlA&riu=http%3a%2f%2fwww.realtreasuretravel.com%2fwp-content%2fuploads%2f2019%2f04%2fPyin-Oo-Lwin3-870x555.jpg&ehk=6DBLOUwgn%2bJcLwNWOAHBI%2fjL3fhfBeG4I0G23%2frkQt0%3d&risl=&pid=ImgRaw&r=0" alt="Horse Cart">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.DOtfC_QDvZIB7gH_75JHzQHaFS?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Local Market">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://tse4.mm.bing.net/th/id/OIP.FX4UO-T4lO7UBjtf3OBQHgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3" alt="Clock Tower">
+          <div class="gallery-overlay">
+            <i class="fas fa-search-plus"></i>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="travel" class="section">
+      <div class="section-header">
+        <h2>Travel Information</h2>
+        <p>Everything you need to plan your visit to Pyin Oo Lwin</p>
+      </div>
+      
+      <div class="travel-grid">
+        <div class="travel-card">
+          <h3><i class="fas fa-map-marked-alt"></i> How to Get There</h3>
+          <ul>
+            <li><strong>From Mandalay:</strong> Shared taxis, buses, or motorbike (~1.5–2 hours)</li>
+            <li><strong>Train:</strong> A slow but scenic 4-hour journey from Mandalay</li>
+            <li><strong>Private Car:</strong> Most comfortable option with hotel pickup available</li>
+            <li><strong>Bicycle:</strong> Adventurous option for experienced cyclists</li>
+          </ul>
+        </div>
+        
+        <div class="travel-card">
+          <h3><i class="fas fa-hotel"></i> Where to Stay</h3>
+          <ul>
+            <li><strong>Budget:</strong> Aureum Hotel, Grace Hotel (~$20-40/night)</li>
+            <li><strong>Mid-Range:</strong> Kandawgyi Hill Resort (~$50-100/night)</li>
+            <li><strong>Luxury:</strong> The Governor's House (colonial-style boutique hotel, ~$150+/night)</li>
+            <li><strong>Unique:</strong> Colonial-era guesthouses and homestays</li>
+          </ul>
+        </div>
+        
+        <div class="travel-card">
+          <h3><i class="fas fa-utensils"></i> Food & Drink</h3>
+          <ul>
+            <li><strong>Local Specialties:</strong> Strawberry dishes, avocado salads, Shan noodles</li>
+            <li><strong>Must-Try:</strong> Pyin Oo Lwin coffee and fresh dairy products</li>
+            <li><strong>Best Restaurants:</strong> Pan Taw Win Cafe & Restaurant</li>
+            <li><strong>Markets:</strong> Morning market for fresh produce and snacks</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="weather-widget">
+        <h3>Current Weather in Pyin Oo Lwin</h3>
+        <div class="weather-info">
+          <div>
+            <i class="fas fa-cloud-sun" style="font-size: 3rem;"></i>
+          </div>
+          <div class="temperature">22°C</div>
+          <div class="weather-details">
+            <p><strong>Partly Cloudy</strong></p>
+            <p>Humidity: 65%</p>
+            <p>Wind: 10 km/h</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-header">
+          <h2 style="color: white;">Traveler Testimonials</h2>
+          <p>What visitors say about their experience in Pyin Oo Lwin</p>
+        </div>
+        
+        <div class="testimonial-container">
+          <div class="testimonial">
+            <div class="testimonial-content">
+              Pyin Oo Lwin was the highlight of our Myanmar trip. The cool climate was a welcome relief from the heat, and the colonial architecture took us back in time. The botanical gardens are world-class!
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Sarah Johnson">
+              </div>
+              <div class="author-info">
+                <h4>Sarah Johnson</h4>
+                <p>Travel Blogger, UK</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="testimonial">
+            <div class="testimonial-content">
+              We loved exploring the waterfalls and caves around Pyin Oo Lwin. The local markets were fantastic too - the strawberries and coffee are must-buys! Highly recommend staying at least 2-3 days to really appreciate this charming town.
+            </div>
+            <div class="testimonial-author">
+              <div class="author-avatar">
+                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Michael Chen">
+              </div>
+              <div class="author-info">
+                <h4>Michael Chen</h4>
+                <p>Photographer, Singapore</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="newsletter">
+      <h2>Stay Updated</h2>
+      <p>Subscribe to our newsletter for travel tips and special offers in Pyin Oo Lwin</p>
+      <form class="newsletter-form">
+        <input type="email" placeholder="Your email address" required>
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>Pyin Oo Lwin</h3>
+        <p>Myanmar's premier hill station destination, offering cool climate, colonial charm, and natural beauty.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#attractions">Attractions</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#travel">Travel Info</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Resources</h3>
+        <ul>
+          <li><a href="#">Travel Guide (PDF)</a></li>
+          <li><a href="#">Interactive Map</a></li>
+          <li><a href="#">Seasonal Events</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@pyinoolwin-travel.com</li>
+          <li><i class="fas fa-phone"></i> +95 9 123 456 789</li>
+          <li><i class="fas fa-map-marker-alt"></i> Pyin Oo Lwin, Mandalay Region, Myanmar</li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Pyin Oo Lwin Travel Guide. All rights reserved.</p>
+      <p><small>Images from various sources under fair use. Designed for educational purposes.</small></p>
+    </div>
+  </footer>
+
+  <a href="#top" class="floating-btn"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    // Simple script to highlight active nav link
+    document.addEventListener('DOMContentLoaded', function() {
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('nav a');
+      
+      window.addEventListener('scroll', function() {
+        let current = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (pageYOffset >= (sectionTop - 300)) {
+            current = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
